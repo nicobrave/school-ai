@@ -1,0 +1,52 @@
+School AI — Plataforma Web de Asistencia Docente con IA
+
+Resumen General
+
+School AI es una plataforma web educativa basada en inteligencia artificial que apoya a docentes en la planificación, evaluación, análisis de datos y generación de actividades. Utiliza tecnologías modernas para facilitar una experiencia personalizada, alineada con el currículum nacional chileno, y optimizada para contextos reales de aula.
+
+Formato: Extensión de navegador
+Tecnologías:
+	•	Frontend: React + Tailwind
+	•	Backend: Flask (Python)
+	•	Base de datos: Supabase y pgvector 
+	•	Autenticación: Clerk
+	•	Hosting: Render.com
+
+⸻
+
+Funcionalidades Principales
+	1.	Evaluaciones Diferenciadas
+	•	Subida de documentos (diagnósticos, perfiles)
+	•	Generación automática de 3 versiones adaptadas
+	•	Interacciones: Me gusta, No me gusta, Cerrar, Ver más
+	2.	Generador de Actividades
+	•	Inputs: curso, objetivo de aprendizaje, tipo de actividad
+	•	Salida: actividad estructurada + preguntas + materiales
+	•	Misma lógica de interacción de botones
+	3.	Planificador de Clases
+	•	Flujo guiado por curso y objetivo
+	•	Tabla editable con sesiones semanales o mensuales
+	•	Opción de exportación a PDF y edición
+	4.	Tabulación de Pruebas
+	•	Subida de Excel/CSV o imagen de resultados
+	•	Análisis IA por estudiante y pregunta
+	•	Sugerencias de refuerzo + visualización gráfica
+
+⸻
+
+Sistema de Recomendaciones con RAG
+	•	Se integrará un sistema de búsqueda aumentada por recuperación (RAG) usando las Bases Curriculares del MINEDUC y otros documentos pedagógicos oficiales.
+	•	Permite:
+	•	Buscar y validar objetivos de aprendizaje por curso/asignatura
+	•	Generar contenidos alineados al currículum
+	•	Personalizar actividades y evaluaciones con fundamentos normativos
+
+⸻
+
+Consola de Administración (para Dirección)
+	•	Dashboard para usuarios con rol admin
+	•	Visualización por docente:
+	•	Frecuencia de uso
+	•	Tipo de recursos generados
+	•	Evaluaciones o actividades más utilizadas
+	•	Exportación de datos a CSV/PDF

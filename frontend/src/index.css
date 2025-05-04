@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-text-primary font-sans;
+}
+
+.card {
+  @apply bg-surface p-6 rounded-xl shadow-card;
+}
+
+button.primary {
+  @apply bg-primary text-white py-2 px-6 rounded-lg transition-all;
+}
+button.primary:hover {
+  @apply bg-secondary;
+}

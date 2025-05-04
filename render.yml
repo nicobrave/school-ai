@@ -1,0 +1,50 @@
+services:
+  - type: web
+    name: school-ai-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && gunicorn main:app
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: FLASK_APP
+        value: main.py
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: SUPABASE_URL
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: SUPABASE_KEY
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: OPENAI_API_KEY
+        fromService:
+          name: school-ai-backend
+          type: secret
+
+  - type: web
+    name: school-ai-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run preview
+    envVars:
+      - key: VITE_SUPABASE_URL
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: VITE_SUPABASE_KEY
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        fromService:
+          name: school-ai-backend
+          type: secret
+      - key: VITE_API_URL
+        value: https://school-ai-backend.onrender.com
